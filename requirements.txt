@@ -1,0 +1,4 @@
+# Requirements
+django==4.0
+python-decouple
+pillow
