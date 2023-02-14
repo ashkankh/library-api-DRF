@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>ALl Books</h1>
+{% for book in book_list %}
+<ul style="margin: 10px;">
+    <li>ID : {{book.id}}</li>
+    <li>Title: {{book.title}}</li>
+    <li>Author: {{book.author.name}}</li>
+    <li>ISBN: {{book.isbn}}</li>
+    <li>subtitle: {{book.subtitle}}</li>
+    <li style="text-align: justify; margin-right: 40px">description: {{book.description}}</li>
+</ul>
+<hr>
+{% endfor %}
+{% if is_paginated %}
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li>
+        <span><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
+    </li>
+    {% endif %}
+    <li class="">
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+    </li>
+    {% if page_obj.has_next %}
+    <li>
+        <span><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
+    </li>
+    {% endif %}
+</ul>
+{% else %}
+<h3>Your File Exam</h3>
+<p>File not yet available</p>
+{% endif %}
+</body>
+</html>

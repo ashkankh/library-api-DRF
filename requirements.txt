@@ -2,3 +2,11 @@
 django==4.0
 python-decouple
 pillow
+
+# 3rd Party app
+wikipedia-api
+
+
+# Reformation and linting
+black
+flake8
