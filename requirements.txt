@@ -4,8 +4,9 @@ python-decouple
 pillow
 
 # 3rd Party app
-wikipedia-api
-
+djangorestframework==3.13.0
+rf-yasg[validation]
+django-filter
 
 # Reformation and linting
 black
